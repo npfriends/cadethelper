@@ -147,9 +147,9 @@ class LocGuesserPage extends Page {
         return "🔎";
     }
 
-    // hideFromPageList() {
-        // return true;
-    // }
+    hideFromPageList() {
+        return true;
+    }
 
     setup() {
         this.setupMap();
