@@ -40,7 +40,7 @@ function textToSpeach(message, noPhonetic = false ) {
 	if (window.isDebug) console.log("TTS", ttsVoice );
 	
 	if (window.isDebug)console.log("GUESS 1", curPage, message, ttsLast );
-	if (curPage == "Guesser" && message == ttsLast ){
+	if (curPage == "guesser" && message == ttsLast ){
 		if (window.isDebug)console.log("GUESS 2", curPage, message );
 		ttsLast = "";
 		return;

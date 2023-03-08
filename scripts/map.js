@@ -713,10 +713,10 @@ class MapProvider {
 			textToSpeach( object.street.Name );
 		}
 		
-		if (curPage == "Streets"){ 
+		if (curPage == "streets"){ 
 			if (window.isDebug) console.log( object.street.Name );
 			setURLParam("id", object.street.Name);
-		} else if (curPage == "Guesser"){ 
+		} else if (curPage == "guesser"){ 
 			if (window.isDebug) 
 				console.log( object.street.Name );
 			if (!guessZoom)

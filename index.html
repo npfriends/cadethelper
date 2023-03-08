@@ -162,24 +162,24 @@
                         <div class="header" style="height: 100px;">
                             <div class="title">Street Guesser</div>
 							<div id="sgFilters" class="sg-progress-text" style="position:absolute;right:10px;">
-								<button class="sgFilter" id="sgCity" onclick="PAGES['Guesser'].sgHood('City');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">CITY</button>
-								<button class="sgFilter" id="sgHighways" onclick="PAGES['Guesser'].sgHood('Highways');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">HIGHWAYS</button>
-								<button class="sgFilter" id="sgVinewood" onclick="PAGES['Guesser'].sgHood('Vinewood');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">VINEWOOD</button>
-								<button class="sgFilter" id="sgSandyshores" onclick="PAGES['Guesser'].sgHood('Sandyshores');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">SANDYSHORES</button>
-								<button class="sgFilter" id="sgGrapeseed" onclick="PAGES['Guesser'].sgHood('Grapeseed');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">GRAPESEED</button>
-								<button class="sgFilter" id="sgPaleto" onclick="PAGES['Guesser'].sgHood('Paleto');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">PALETO</button>
+								<button class="sgFilter" id="sgCity" onclick="PAGES['guesser'].sgHood('City');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">CITY</button>
+								<button class="sgFilter" id="sgHighways" onclick="PAGES['guesser'].sgHood('Highways');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">HIGHWAYS</button>
+								<button class="sgFilter" id="sgVinewood" onclick="PAGES['guesser'].sgHood('Vinewood');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">VINEWOOD</button>
+								<button class="sgFilter" id="sgSandyshores" onclick="PAGES['guesser'].sgHood('Sandyshores');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">SANDYSHORES</button>
+								<button class="sgFilter" id="sgGrapeseed" onclick="PAGES['guesser'].sgHood('Grapeseed');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">GRAPESEED</button>
+								<button class="sgFilter" id="sgPaleto" onclick="PAGES['guesser'].sgHood('Paleto');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">PALETO</button>
 							</div>
 							<div id="sgFilters" class="sg-progress-text"  style="position:absolute;right:10px;top:50px;">
-								<button class="" id="sgNowrong" onclick="PAGES['Guesser'].sgNowrong();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅SAY WRONG</button>
-								<button class="" id="sgNocorrect" onclick="PAGES['Guesser'].sgNocorrect();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅SAY CORRECT</button>
-								<button class="" id="sgNozoom" onclick="PAGES['Guesser'].sgNozoom();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅STREET ZOOM</button>
+								<button class="" id="sgNowrong" onclick="PAGES['guesser'].sgNowrong();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅SAY WRONG</button>
+								<button class="" id="sgNocorrect" onclick="PAGES['guesser'].sgNocorrect();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅SAY CORRECT</button>
+								<button class="" id="sgNozoom" onclick="PAGES['guesser'].sgNozoom();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅STREET ZOOM</button>
 							</div>
                         </div>
 
                         <div id="sgScore" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
                         
-                        <div id="sgRetry" onclick="PAGES['Guesser'].retry()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Retry</div>
-                        <div id="sgGiveUp" onclick="PAGES['Guesser'].endGame()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+                        <div id="sgRetry" onclick="PAGES['guesser'].retry()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Retry</div>
+                        <div id="sgGiveUp" onclick="PAGES['guesser'].endGame()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
 
                         <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
                             <div id="sgCorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
@@ -193,9 +193,9 @@
                         </div>
 
                         <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
-                            <div onclick="PAGES['Guesser'].shiftSelectedStreet(-1)" class="sg-header-button">Previous</div>
-                            <div onclick="PAGES['Guesser'].startGame()" id="sgCurrentStreet" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
-                            <div onclick="PAGES['Guesser'].shiftSelectedStreet(1)" class="sg-header-button">Next</div>
+                            <div onclick="PAGES['guesser'].shiftSelectedStreet(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['guesser'].startGame()" id="sgCurrentStreet" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['guesser'].shiftSelectedStreet(1)" class="sg-header-button">Next</div>
                         </div>
                     </div>
 
@@ -211,7 +211,7 @@
                             <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
                             <div id="sgEndTime" class="sg-progress-text" style="font-size: 4vmin;"></div>
 
-                            <div onclick="PAGES['Guesser'].retry()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                            <div onclick="PAGES['guesser'].retry()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
                         
                             <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;width:100%;text-align:left;">
 							OMDW
@@ -229,7 +229,7 @@
                         </div>
 
                         <div id="lgScore" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
-                        <div id="lgRetry" onclick="PAGES['Locations'].endGame()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+                        <div id="lgRetry" onclick="PAGES['locations'].endGame()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
 
                         <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
                             <div id="lgCorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
@@ -243,9 +243,9 @@
                         </div>
 
                         <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
-                            <div onclick="PAGES['Locations'].shiftSelectedStreet(-1)" class="sg-header-button">Previous</div>
-                            <div onclick="PAGES['Locations'].startGame()" id="lgCurrentLoc" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
-                            <div onclick="PAGES['Locations'].shiftSelectedStreet(1)" class="sg-header-button">Next</div>
+                            <div onclick="PAGES['locations'].shiftSelectedStreet(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['locations'].startGame()" id="lgCurrentLoc" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['locations'].shiftSelectedStreet(1)" class="sg-header-button">Next</div>
                         </div>
                     </div>
 
@@ -261,7 +261,7 @@
                             <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
                             <div id="lgEndTime" class="sg-progress-text" style="font-size: 4vmin;"></div>
 
-                            <div onclick="PAGES['Locations'].retry()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                            <div onclick="PAGES['locations'].retry()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
                         
                             <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;">Cadet Helper</div>
                         </div>
