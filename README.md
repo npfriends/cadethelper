@@ -1,4 +1,4 @@
-# Cadet Helper
+# Cadet Helper https://npfriends.github.io/cadethelper
 Learn GTAV street names
 > +added streets page
 > 
@@ -8,4 +8,4 @@ Learn GTAV street names
 
 
 
-Created from The Unoffical Online MDW: https://h2n9.github.io/OMDW/
+Created from The Unoffical Online MDW: https://github.com/H2n9/OMDW
