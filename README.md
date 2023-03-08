@@ -1,9 +1,10 @@
 # Cadet Helper
 Learn GTAV street names
-> added streets page
-> added text-to-speech
+> +added streets page
+> 
+> +added text-to-speech
 
-> removed everything else
+> -removed everything else
 
 
 
