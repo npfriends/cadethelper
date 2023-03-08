@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Cadet Helper</title>
+
+        <meta charset="utf-8">
+		<meta name="description" content="GTAV Map Street Trainer and Guesser!">
+		<meta name="keywords" content="GTA, GTA5, Grand Theft Auto, streetguesser, streetguessr, streetgueser, GeoGuesser, guesser, gta, 5, grand, theft, auto, grand theft auto, gta5, v, gtav, geoguessr, geo, guessr, geoguesser, guesser, gtaguessr, gtaguesser, explore, los, santos, follow, Fanklin, map, locations">
+		<meta name="robots" content="index, follow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="English">
+		<meta property="og:title" content="GTAV Street Trainer">
+		<meta property="og:site_name" content="GTAV Street Trainer">
+		<meta property="og:url" content="https://npfriends.github.io/NPCadetHelper/">
+		<meta property="og:description" content="GTAV Map Street Trainer and Guesser!">
+		<meta property="og:type" content="website">
+		<!-- <meta property="og:image" content="https://gta-geoguesser.com/static/assets/img/preview.png"> -->
+		<meta name="theme-color" content="#000000">
+
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/sections.css">
+        <link rel="stylesheet" href="styles/search.css">
+
+        <link rel="stylesheet" href="styles/profiles.css"></link>
+        <link rel="stylesheet" href="styles/dashboard.css"></link>
+        <link rel="stylesheet" href="styles/properties.css"></link>
+        <link rel="stylesheet" href="styles/employment.css"></link>
+        <link rel="stylesheet" href="styles/rankings.css"></link>
+        <link rel="stylesheet" href="styles/incidents.css"></link>
+        <link rel="stylesheet" href="styles/charges.css"></link>
+        <link rel="stylesheet" href="styles/games.css"></link>
+
+        <script type="text/javascript" src="database.js"></script>
+
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/vector.js"></script>
+        <script type="text/javascript" src="scripts/page.js"></script>
+        <script type="text/javascript" src="scripts/search.js"></script>
+        <script type="text/javascript" src="scripts/map.js"></script>
+
+        <script type="text/javascript" src="scripts/pages/settings.js"></script>
+        <script type="text/javascript" src="scripts/pages/dashboard.js"></script>
+        <script type="text/javascript" src="scripts/pages/profiles.js"></script>
+        <script type="text/javascript" src="scripts/pages/properties.js"></script>
+        <script type="text/javascript" src="scripts/pages/streets.js"></script>
+        <script type="text/javascript" src="scripts/pages/employment.js"></script>
+        <script type="text/javascript" src="scripts/pages/rankings.js"></script>
+        <script type="text/javascript" src="scripts/pages/incidents.js"></script>
+        <script type="text/javascript" src="scripts/pages/charges.js"></script>
+
+        <script type="text/javascript" src="scripts/pages/games.js"></script>
+        <script type="text/javascript" src="scripts/pages/games/streetguesser.js"></script>
+        <script type="text/javascript" src="scripts/pages/games/locationguesser.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+		
+			<div class="title"><a href="https://github.com/npfriends/NPCadetHelper" target="_blank" style='font-size:24px;'>Cadet Helper</a><font style='font-size:10px;'>&nbsp;&nbsp;&nbsp;by tidnab</font></div>
+			<div class="link" style='top:4px;'>
+				<form name="voiceForm" style="display:inline-block;">
+					<select style="width: 140px;font-weight: bold;padding: 3px; border-radius: 6px;font-size: 16px;text-align: center;" id="voiceMenu" name="voiceMenu" onChange="setVoice(document.voiceForm.voiceMenu.options[document.voiceForm.voiceMenu.options.selectedIndex].value)">
+						<option value=0>MALE 1</option>
+						<option value=1>MALE 2</option>
+						<option value=6>MALE 3 UK</option>
+						<option value=2>FEMALE 1</option>
+						<option value=4>FEMALE 2</option>
+						<option value=5>FEMALE 3 UK</option>
+					</select>
+				</form>
+				<button onclick="toggleTTS()" id='ttspower' style='padding: 2px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;'>🔊TTS</button>&nbsp;&nbsp;&nbsp;&nbsp;source: <a href="https://github.com/H2n9/OMDW" target="_blank">https://github.com/H2n9/OMDW</a></div>
+			<!-- <div class="title">NP Public Cadet Helper</div> -->
+			<!-- <div class="link" style='top:4px;'><button onclick="toggleTTS()" id='ttspower' style='padding:2px;background-color:lightgreen;'>TTS Activity</button>&nbsp;&nbsp;&nbsp;&nbsp;source: <a href="https://github.com/H2n9/OMDW">https://github.com/H2n9/OMDW</a></div> -->
+        </div>
+
+        <div class="content">
+            <div id="sidebar" class="sidebar">
+            </div>
+
+            <div id="pageContainer" class="page-container">
+                
+                <div id="SettingsPage" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">Settings</div>
+                        </div>
+						<div class="charges-group-header" style="text-align:center;">
+							<div>
+								<button onclick="toggleTTS()" id='ttspower2' style='width:100%;font-size:32px;padding: 2px;background-color: lightgreen;font-weight: bold;border-radius: 6px;'>🔊TEXT-TO-SPEECH ENABLED</button>
+							</div>
+							<br>
+							<div>
+								<button onclick="togglePhonetics()" id='ttsphonetics' style='width:100%;font-size:32px;padding: 2px;background-color: lightgreen;font-weight: bold;border-radius: 6px;'>🦻PRONUNCIATIONS ENABLED</button>
+							</div>
+							<div id="proList">
+								PRONUNCIATIONS LIST:
+							</div>
+						</div>
+					</div>
+                </div>
+				
+                <div id="StreetsPage" class="page-content">
+					
+                    <div class="section" style="width: 30%;" id="propTab2">
+						<div class="header" style="margin-bottom:0px;padding-bottom:0px;"><div class="title">Streets</div></div>
+                        <div class="header" style="margin:0px;padding-top:0px;">
+                            <div class="searchbar" style="margin-left:0px;">
+                                <input id="streetSearch" type="search" placeholder="...">
+                            </div>
+							<div class="title" style="">Sort:<span id="streetSort" onclick="streetSortChange()">⬇️</span></div>
+                        </div>
+                        
+                        <div class="search-tags-container">
+                            
+                        </div>
+
+                        <div class="search-content">
+                        </div>
+                    </div>
+
+                    <div class="section" style="width: 70%;" id="mapTab2">
+                        <div class="header">
+                            <div class="title">Map</div>
+							<!-- 
+							<div class="help">
+								<span class="tooltip">
+									<b>Map locations are currently still being collected, many locations may be missing or inaccurate.<br></b>
+								</span>
+							</div>
+							-->
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <div id="ChargesPage" class="page-content hidden" style="flex-direction: column;">
+                    <div style="margin-bottom: 1vmin; padding: 1.5vmin; background-color: var(--foreground-3); display: flex; flex-direction: row; justify-content: space-between;">
+                        <div style="color: var(--font-color-1); font-size:2.5vmin; font-weight: bold;">Charges</div>
+
+						<div id="sgFilters" class="sg-progress-text"  style="text-align:right;">						
+							<div class="searchbar" style="max-width: 60vmin;">
+								<input id="chargesSearch" type="search" placeholder="...">
+							</div>
+							<button onclick="toggleChargeDescriptions()" id="chargeDescriptions" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">DESCRIPTIONS SHOWN</button>
+							<button onclick="toggleChargeFolders()" id="chargeFolders" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">📖</button>
+						</div>
+
+                    </div>
+
+                    <div id="chargesSectionParent" class="charges-groups">
+                    </div>
+                </div>
+
+                <div id="StreetGuesserPage" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header" style="height: 100px;">
+                            <div class="title">Street Guesser</div>
+							<div id="sgFilters" class="sg-progress-text" style="position:absolute;right:10px;">
+								<button class="sgFilter" id="sgCity" onclick="PAGES['Guesser'].sgHood('City');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">CITY</button>
+								<button class="sgFilter" id="sgHighways" onclick="PAGES['Guesser'].sgHood('Highways');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">HIGHWAYS</button>
+								<button class="sgFilter" id="sgVinewood" onclick="PAGES['Guesser'].sgHood('Vinewood');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">VINEWOOD</button>
+								<button class="sgFilter" id="sgSandyshores" onclick="PAGES['Guesser'].sgHood('Sandyshores');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">SANDYSHORES</button>
+								<button class="sgFilter" id="sgGrapeseed" onclick="PAGES['Guesser'].sgHood('Grapeseed');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">GRAPESEED</button>
+								<button class="sgFilter" id="sgPaleto" onclick="PAGES['Guesser'].sgHood('Paleto');" style="height:32px;background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 16px;">PALETO</button>
+							</div>
+							<div id="sgFilters" class="sg-progress-text"  style="position:absolute;right:10px;top:50px;">
+								<button class="" id="sgNowrong" onclick="PAGES['Guesser'].sgNowrong();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅SAY WRONG</button>
+								<button class="" id="sgNocorrect" onclick="PAGES['Guesser'].sgNocorrect();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅SAY CORRECT</button>
+								<button class="" id="sgNozoom" onclick="PAGES['Guesser'].sgNozoom();" style="background-color: lightgreen;font-weight: bold;border-radius: 6px;font-size: 10px; padding: 2px;">✅STREET ZOOM</button>
+							</div>
+                        </div>
+
+                        <div id="sgScore" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
+                        
+                        <div id="sgRetry" onclick="PAGES['Guesser'].retry()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Retry</div>
+                        <div id="sgGiveUp" onclick="PAGES['Guesser'].endGame()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
+                            <div id="sgCorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
+                            <div id="sgTimer" class="sg-progress-text" style="font-size: 2.25vmin;">0:00</div>
+                            <div id="sgIncorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:red;"></div>
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
+                            <div onclick="PAGES['Guesser'].shiftSelectedStreet(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['Guesser'].startGame()" id="sgCurrentStreet" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['Guesser'].shiftSelectedStreet(1)" class="sg-header-button">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="sgOverlay" class="sg-overlay">
+
+                        <div class="sg-overlay-box">
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 2.25vmin;">Street Guesser</div>
+
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Score</div>
+                            <div id="sgEndPercent" class="sg-progress-text" style="font-size: 6vmin;"></div>
+                            <div id="sgEndScore" class="sg-progress-text" style="font-size: 2.25vmin;"></div>
+                            
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
+                            <div id="sgEndTime" class="sg-progress-text" style="font-size: 4vmin;"></div>
+
+                            <div onclick="PAGES['Guesser'].retry()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                        
+                            <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;width:100%;text-align:left;">
+							OMDW
+							<span style="position:absolute;right:12px;" onclick=" document.getElementById('sgOverlay').style.display='none';">X</span>
+							</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="LocGuesserPage" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">Location Guesser</div>
+                        </div>
+
+                        <div id="lgScore" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
+                        <div id="lgRetry" onclick="PAGES['Locations'].endGame()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
+                            <div id="lgCorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
+                            <div id="lgTimer" class="sg-progress-text" style="font-size: 2.25vmin;">0:00</div>
+                            <div id="lgIncorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:red;"></div>
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
+                            <div onclick="PAGES['Locations'].shiftSelectedStreet(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['Locations'].startGame()" id="lgCurrentLoc" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['Locations'].shiftSelectedStreet(1)" class="sg-header-button">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="lgOverlay" class="lg-overlay">
+
+                        <div class="sg-overlay-box">
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 2.25vmin;">Loc Guesser</div>
+
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Score</div>
+                            <div id="lgEndPercent" class="sg-progress-text" style="font-size: 6vmin;"></div>
+                            <div id="lgEndScore" class="sg-progress-text" style="font-size: 2.25vmin;"></div>
+                            
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
+                            <div id="lgEndTime" class="sg-progress-text" style="font-size: 4vmin;"></div>
+
+                            <div onclick="PAGES['Locations'].retry()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                        
+                            <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;">Cadet Helper</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
