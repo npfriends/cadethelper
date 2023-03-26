@@ -620,7 +620,7 @@ class MapProvider {
 			window.newStreet = window.newStreet || [];
 			var p1 = this.getCoordFromPos(pos);
 			var l1 = Object.keys(window.newStreet).length;
-			console.log("New Point:", l1, window.newStreet, p1 );
+			console.log("New Point:", pos, p1, l1, window.newStreet );
 			window.newStreet[ l1 + 1 ] =  p1;
 		}
         var closestObject = null;

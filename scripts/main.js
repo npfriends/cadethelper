@@ -71,7 +71,7 @@ function toggleChargeDescriptions(){
 	chargeDescribe = !chargeDescribe;
 	document.getElementById("chargeDescriptions").style.backgroundColor = chargeDescribe ? "lightgreen" : "salmon";
 	document.getElementById("chargeDescriptions").innerHTML = chargeDescribe ? "DESCRIPTIONS SHOWN" : "DESCRIPTIONS HIDDEN";
-	var theButtons = document.querySelectorAll(".charge-header font");
+	var theButtons = document.querySelectorAll(".charge-value font");
 	var buttonArray = Array.from(theButtons);
 	buttonArray.forEach(function(button){
 		button.classList.toggle("hidden");
@@ -211,6 +211,7 @@ function setupPages() {
     addPage("guesser", new StreetGuesserPage(document.getElementById("StreetGuesserPage")) );
     addPage("charges", new ChargesPage(document.getElementById("ChargesPage")));
     addPage("locations", new LocGuesserPage(document.getElementById("LocGuesserPage")));
+    addPage("tencodes", new TenCodesPage(document.getElementById("TenCodesPage")));
     addPage("settings", new SettingsPage(document.getElementById("SettingsPage")) );
 }
 function showPage(targetKey) {
@@ -291,6 +292,13 @@ function processURLQuery() {
     var url = window.location.href;
 
     var params = new URL(url).searchParams;
+	
+    if (params.has("showhidden")){
+		localStorage.setItem("showhidden", 1);
+		deleteURLParam("showhidden");
+		location.reload();
+		return;
+	}
 
     var pageKey = decodeURIComponent(params.get("p"));
 	
@@ -302,7 +310,7 @@ function processURLQuery() {
 
     var targetID = null;
     if (params.has("id")) targetID = decodeURIComponent(params.get("id"));
-
+	
     switch (pageKey) {
         case "profiles":
             showPage("profiles");

@@ -3,9 +3,9 @@ class ChargesPage extends Page {
         return "Charges";
     }
 	
-    hideFromPageList() {
-        return true;
-    }
+    // hideFromPageList() {
+        // return !Boolean( localStorage.getItem("showhidden") );
+    // }
 
     setup() {
         this.searchObject = document.getElementById("chargesSearch");
@@ -131,6 +131,9 @@ class ChargesPage extends Page {
         chargeHeader.className = "charge-header";
         chargeHeader.innerHTML = "<b style='font-size:2vmin;text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;'>" + charge.Name + "</b>";
         chargeEntry.appendChild(chargeHeader);
+		chargeHeader.addEventListener("click", function () {
+			navigator.clipboard.writeText( charge.Name );
+		});
 		
 		// console.log(charge.Name, charge );
 		// if ( charge && charge["Default"] && charge["Default"]["Time"] ){
@@ -138,7 +141,6 @@ class ChargesPage extends Page {
 			// chargeSep.className = "charge-seperator";
 			// chargeEntry.appendChild(chargeSep);
 		// }
-		
 		
 		if ( charge && charge["Type"] && charge["Type"] == "HUT" ){
 			var chargeSep = document.createElement("span");
@@ -151,15 +153,27 @@ class ChargesPage extends Page {
 			chargeSep.style = "color:#ccc;position:absolute;top:0px;right:2px;font-size:0.7em; font-weight:bold;  text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;";
 			chargeEntry.appendChild(chargeSep);
 		}
+		
+		var stuff = "";
+		if(charge["Default"] && charge["Default"]["Time"]) stuff += `<span style='color:#FED8B1;';>${charge["Default"]["Time"].toLocaleString()}</span>`;
+		if(charge["Default"] && charge["Default"]["Fine"]) stuff += `  <span style='color:lightgreen';>$${charge["Default"]["Fine"].toLocaleString()}</span>`
+		if(stuff != ""){
+			var chargeSep = document.createElement("span");
+			chargeSep.innerHTML = stuff;
+			chargeSep.style = "color:#ccc;position:absolute;top:0px;left:0px;font-size:0.6em; font-weight:bold;";
+			chargeEntry.appendChild(chargeSep);
+		}
 				
 		var chargeDesc = document.createElement("div");
 		// sepA.className = "charge-seperator";
-        chargeDesc.className = chargeDescribe ? "charge-header" : "charge-header hidden";
+        chargeDesc.className = chargeDescribe ? "charge-value" : "charge-value hidden";
 		chargeDesc.innerHTML = charge.Description != null
                 ? "<font style='font-color:white;'>" 
 				+ charge.Description + 
 				"</font>"
-				+ "<span class='chargeRead' style='position:absolute;right:2px;bottom:2px;text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;' onclick='textToSpeach(`" + charge.Name + "! " + charge.Description + "`);'>🔊</span>"
+				+ "<span class='chargeRead' style='position:absolute;right:2px;bottom:2px;text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;' onclick='textToSpeach(`" + 
+				charge.Name.replace(/'/g, "&apos;").replace(/"/g, "&quot;") + "! " + 
+				charge.Description.replace(/'/g, "&apos;").replace(/"/g, "&quot;") + "`);'>🔊</span>"
                 : "<b>[Unknown Description]</b>";
 		chargeEntry.appendChild(chargeDesc);
 		
