@@ -2,10 +2,13 @@ class ChargesPage extends Page {
     getDisplayName() {
         return "Charges";
     }
+    getDisplayEmoji() {
+        return "📜";
+    }
 	
-    // hideFromPageList() {
-        // return !Boolean( localStorage.getItem("showhidden") );
-    // }
+    hideFromPageList() {
+        return !Boolean( localStorage.getItem("showhidden") );
+    }
 
     setup() {
         this.searchObject = document.getElementById("chargesSearch");

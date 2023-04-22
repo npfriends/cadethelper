@@ -6,9 +6,9 @@ class TenCodesPage extends Page {
         return "📻";
     }
 
-    // hideFromPageList() {
-        // return !Boolean( localStorage.getItem("showhidden") );
-    // }
+    hideFromPageList() {
+        return !Boolean( localStorage.getItem("showhidden") );
+    }
 
     setup() {
 		
